@@ -1,0 +1,50 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+
+# Virtual environment
+.env
+.venv/
+venv/
+
+# Jupyter
+.ipynb_checkpoints/
+
+
+# OS
+.DS_Store
+
+
+# Data
+data/raw/
+data/processed/
+data/chunks/
+data/embeddings/
+
+
+# Vector database
+vector_store/
+
+
+# Models
+models/cache/
+models/local_llm/
+
+
+# Logs
+*.log
+
+
+# Temporary
+tmp/
+temp/
+
+
+# Environment
+.env
+
+
+# IDE
+.vscode/
+.idea/
