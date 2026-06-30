@@ -1,0 +1,50 @@
+project:
+  name: NeuroVLSI-GPT
+  version: 1.0.0
+
+paths:
+  raw_data: data/raw
+  processed_data: data/processed
+  chunks: data/chunks
+  vector_store: vector_store
+  registry: registry
+
+models:
+  embedding:
+    name: BAAI/bge-base-en-v1.5
+  reranker:
+    name: BAAI/bge-reranker-base
+  llm:
+    name: Qwen/Qwen2.5-3B-Instruct
+
+
+retrieval:
+  top_k: 20
+  rerank_top_k: 5
+
+
+chunking:
+  chunk_size: 1000
+  chunk_overlap: 200
+
+embedding:
+  model_name: "BAAI/bge-base-en-v1.5"
+
+metadata:
+  enabled: true
+
+vector_store:
+  collection: neurovlsi_v1
+
+llm:
+  provider: llama_cpp
+
+  model_path: models/local_llm/qwen2.5-7b-instruct.gguf
+
+  context_length: 8192
+
+  temperature: 0.2
+
+  max_new_tokens: 1024
+
+  gpu_layers: 35
