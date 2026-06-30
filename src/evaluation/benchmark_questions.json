@@ -1,0 +1,82 @@
+[
+    {
+        "question": "What is a current mirror?",
+        "expected_concepts": ["current mirror"]
+    },
+    {
+        "question": "Explain SRAM read disturb",
+        "expected_concepts": ["sram", "read"]
+    },
+    {
+        "question": "What is setup time violation?",
+        "expected_concepts": ["setup time"]
+    },
+    {
+        "question": "Explain differential pair operation",
+        "expected_concepts": ["differential pair"]
+    },
+    {
+        "question": "What is a PLL?",
+        "expected_concepts": ["pll"]
+    },
+    {
+        "question": "What is hold time violation?",
+        "expected_concepts": ["hold time"]
+    },
+    {
+        "question": "Explain metastability in flip-flops",
+        "expected_concepts": ["metastability", "flip-flop"]
+    },
+    {
+        "question": "What is clock skew?",
+        "expected_concepts": ["clock skew"]
+    },
+    {
+        "question": "Describe the operation of a CMOS inverter",
+        "expected_concepts": ["cmos inverter"]
+    },
+    {
+        "question": "What is latch-up in CMOS circuits?",
+        "expected_concepts": ["latch-up", "cmos"]
+    },
+    {
+        "question": "Explain the difference between combinational and sequential logic",
+        "expected_concepts": ["combinational logic", "sequential logic"]
+    },
+    {
+        "question": "What is a sense amplifier in memory design?",
+        "expected_concepts": ["sense amplifier", "memory"]
+    },
+    {
+        "question": "Explain dynamic power consumption in CMOS",
+        "expected_concepts": ["dynamic power", "cmos"]
+    },
+    {
+        "question": "What is leakage current in semiconductor devices?",
+        "expected_concepts": ["leakage current"]
+    },
+    {
+        "question": "Describe the operation of a charge pump",
+        "expected_concepts": ["charge pump"]
+    },
+    {
+        "question": "What is clock domain crossing (CDC)?",
+        "expected_concepts": ["clock domain crossing", "cdc"]
+    },
+    {
+        "question": "Explain static timing analysis (STA)",
+        "expected_concepts": ["static timing analysis", "sta"]
+    },
+    {
+        "question": "What is electromigration in VLSI?",
+        "expected_concepts": ["electromigration"]
+    },
+    {
+        "question": "Explain the operation of a ring oscillator",
+        "expected_concepts": ["ring oscillator"]
+    },
+    {
+        "question": "What is a bandgap reference?",
+        "expected_concepts": ["bandgap reference"]
+    }
+]
