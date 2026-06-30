@@ -41,10 +41,35 @@ tmp/
 temp/
 
 
-# Environment
-.env
-
-
 # IDE
 .vscode/
 .idea/
+
+
+cat > .gitignore << 'EOF'
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Environments
+venv/
+.env/
+neurovlsi/
+
+
+# OS
+.DS_Store
+
+# Large/local model artifacts (IMPORTANT)
+models/cache/
+vector_store/
+*.sqlite3
+
+# embeddings cache (optional if large)
+data/embeddings/
+
+# logs
+*.log
+EOF
