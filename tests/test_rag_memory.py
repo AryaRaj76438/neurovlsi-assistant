@@ -10,9 +10,9 @@ def test_conversation_memory():
     print("\nQuestion 1:")
     q1 = """
     Explain the purpose of a current mirror
-    and how it works in CMOS analog circuits.
+    and how it works in CMOS analog circuits in detail.
     """
-
+    print(q1)
     answer1 = ""
 
     for output in rag.ask(q1):
@@ -28,9 +28,9 @@ def test_conversation_memory():
 
     print("Question 2:")
     q2 = """
-    How this is used in differential ampliefier? Explain some mathematical equations.
+    How this is used in differential ampliefier? Explain mathematical equations and some practical examples.
     """
-
+    print(q2)
     answer2 = ""
 
     for output in rag.ask(q2):

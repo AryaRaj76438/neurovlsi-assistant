@@ -1,4 +1,8 @@
 # NeuroVLSI-GPT
+<p align="center">
+  <img src="data/Image/Image-Test.png" width="900">
+</p>
+
 
 > **An Intelligent Retrieval-Augmented Generation (RAG) Assistant for VLSI Design, Semiconductor Engineering, and Neuromorphic Computing**
 

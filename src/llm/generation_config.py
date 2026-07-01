@@ -5,5 +5,5 @@ from dataclasses import dataclass
 class GenerationConfig:
     temperature: float = 0.2
     top_p: float = 0.9
-    max_new_tokens: int = 256
+    max_new_tokens: int = 512
     do_sample: bool = True
