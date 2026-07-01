@@ -159,22 +159,6 @@ This modular design simplifies experimentation and future research.
 
 ---
 
-# Current Supported Domains
-
-The current knowledge base focuses on:
-
-- Analog CMOS Design
-- Digital Logic Design
-- Digital Integrated Circuits
-- VLSI Fundamentals
-- Neuromorphic Computing
-- Neural Hardware
-- Semiconductor Research Papers
-
-The architecture allows unlimited expansion into additional domains without modifying the retrieval pipeline.
-
----
-
 # System Architecture
 
 NeuroVLSI-GPT follows a modular Retrieval-Augmented Generation (RAG) architecture designed specifically for semiconductor engineering. Rather than depending solely on a language model's internal knowledge, the system retrieves relevant technical information from a curated engineering knowledge base before generating an answer.
@@ -469,23 +453,6 @@ This enables natural conversations where users can ask follow-up questions witho
 
 ---
 
-# Design Principles
-
-The architecture is built around the following principles:
-
-- Modular implementation
-- Explainable retrieval
-- Grounded answer generation
-- Offline execution
-- Extensible knowledge base
-- Scalable indexing
-- Research-oriented experimentation
-- Engineering-focused retrieval
-- Source transparency
-- Future compatibility with hardware design tools
-
----
-
 # Project Structure
 
 The repository is organized into independent modules, where each component is responsible for a single stage of the NeuroVLSI-GPT pipeline. This modular design improves maintainability, testing, and future extensibility.
@@ -593,150 +560,6 @@ The generated vectors are stored inside the vector database for semantic search.
 
 ---
 
-## metadata/
-
-Creates structured metadata for every chunk.
-
-Examples include:
-
-- Engineering category
-- Circuit type
-- Applications
-- Technical concepts
-- Source information
-
-Metadata improves retrieval precision while enabling future intelligent filtering.
-
----
-
-## retrieval/
-
-Implements the complete retrieval engine.
-
-Modules include:
-
-- Dense vector retrieval
-- BM25 retrieval
-- Metadata retrieval
-- Retrieval fusion
-- Deduplication
-- Cross-encoder reranking
-- Source expansion
-- Query analysis
-
-This package is the core search engine of NeuroVLSI-GPT.
-
----
-
-## rag/
-
-Implements the Retrieval-Augmented Generation pipeline.
-
-Responsibilities include:
-
-- Query rewriting
-- Context building
-- Context compression
-- Prompt construction
-- Answer grounding
-- Citation injection
-- Conversation memory
-- End-to-end orchestration
-
-This module connects retrieval with language generation.
-
----
-
-## llm/
-
-Handles interaction with the local language model.
-
-Responsibilities:
-
-- Model loading
-- Generation configuration
-- Response generation
-- Response parsing
-
-The language model operates entirely offline after downloading.
-
----
-
-## vector_store/
-
-Responsible for storing and querying vector embeddings.
-
-Current implementation:
-
-- ChromaDB
-
-Future support may include:
-
-- FAISS
-- Milvus
-- Qdrant
-- Pinecone
-
----
-
-## evaluation/
-
-Contains utilities for benchmarking retrieval quality.
-
-Capabilities include:
-
-- Benchmark loading
-- Retrieval metrics
-- Evaluation pipeline
-- Performance analysis
-
-This module supports quantitative comparison between retrieval strategies.
-
----
-
-## schemas/
-
-Defines shared data structures used across the project.
-
-Examples include:
-
-- Chunk
-- Query
-- Prompt
-- Retrieval result
-- Context
-- Grounding
-- Answer
-
-Using centralized schemas improves consistency between modules.
-
----
-
-## core/
-
-Contains shared infrastructure used throughout the project.
-
-Examples include:
-
-- Global configuration
-- Project paths
-- Model registry
-- Shared utilities
-
----
-
-## utils/
-
-Utility functions used across multiple modules.
-
-Examples:
-
-- Logging
-- Helper functions
-- Common utilities
-
----
-
 # Data Directory
 
 The `data` directory stores every stage of document processing.
@@ -761,30 +584,6 @@ vector database
 ```
 
 This separation allows every processing stage to be independently inspected, debugged, or regenerated.
-
----
-
-# Testing
-
-The project contains comprehensive unit and integration tests covering every major subsystem.
-
-Examples include:
-
-- PDF extraction
-- Chunk generation
-- Embedding pipeline
-- Metadata generation
-- BM25 indexing
-- Vector retrieval
-- Hybrid retrieval
-- Context builder
-- Prompt builder
-- Conversation memory
-- RAG pipeline
-- Local LLM
-- Registry synchronization
-
-A modular testing strategy enables rapid development while maintaining reliability.
 
 ---
 
@@ -933,67 +732,6 @@ Planned domains include:
 
 ---
 
-# Current Features
-
-NeuroVLSI-GPT currently provides the following capabilities.
-
-## Document Ingestion
-
-- Automatic document discovery
-- Incremental synchronization
-- PDF parsing
-- Duplicate detection
-- Registry management
-
----
-
-## Text Processing
-
-- Recursive chunking
-- Stable chunk identifiers
-- Structured chunk storage
-- Metadata enrichment
-
----
-
-## Semantic Search
-
-- Dense vector retrieval
-- BM25 keyword retrieval
-- Metadata retrieval
-- Hybrid search
-- Retrieval fusion
-
----
-
-## Intelligent Ranking
-
-- Cross-Encoder reranking
-- Duplicate removal
-- Source expansion
-- Query analysis
-
----
-
-## Retrieval-Augmented Generation
-
-- Context building
-- Context compression
-- Prompt construction
-- Grounded answer generation
-- Citation injection
-
----
-
-## Conversation
-
-- Multi-turn conversations
-- Conversation memory
-- Query rewriting
-- Context-aware retrieval
-
----
-
 ## Local AI
 
 - Offline execution
@@ -1028,14 +766,6 @@ Every generated answer should reference supporting evidence from the source docu
 
 ---
 
-## Privacy
-
-The system is designed to operate completely offline after downloading the required models.
-
-No engineering documents are uploaded to external services.
-
----
-
 ## Extensibility
 
 New engineering books, papers, and technical documents can be added without changing the architecture.
@@ -1045,105 +775,6 @@ New engineering books, papers, and technical documents can be added without chan
 ## Scalability
 
 The system is designed to scale from a few books to thousands of engineering documents.
-
----
-
-# Development Roadmap
-
-The project is being developed in multiple phases.
-
----
-
-## Phase 1 — Knowledge Base Construction ✅
-
-Completed
-
-- PDF ingestion
-- Text extraction
-- Recursive chunking
-- Metadata generation
-- Embedding generation
-- Chroma vector database
-- Incremental synchronization
-
----
-
-## Phase 2 — Intelligent Retrieval ✅
-
-Completed
-
-- Dense retrieval
-- BM25 retrieval
-- Hybrid retrieval
-- Metadata retrieval
-- Retrieval fusion
-- Cross-Encoder reranking
-- Source expansion
-
----
-
-## Phase 3 — Retrieval-Augmented Generation ✅
-
-Completed
-
-- Context builder
-- Prompt builder
-- Conversation memory
-- Query rewriting
-- Grounding
-- Citation injection
-- Local LLM integration
-
----
-
-## Phase 4 — Advanced Intelligence 🚧
-
-In Progress
-
-Planned improvements include:
-
-- Better metadata extraction
-- Engineering ontology
-- Query decomposition
-- Multi-hop retrieval
-- Answer refinement
-- Automatic document summarization
-- Table understanding
-- Equation-aware retrieval
-
----
-
-## Phase 5 — Production System 📅
-
-Future work
-
-- FastAPI backend
-- REST API
-- Authentication
-- Web interface
-- Streaming responses
-- GPU optimization
-- Docker deployment
-- Monitoring
-- Logging
-- Distributed indexing
-
----
-
-## Phase 6 — Research Platform 📅
-
-Long-term vision
-
-- Engineering reasoning engine
-- Circuit-aware retrieval
-- RTL understanding
-- Layout-aware search
-- SPICE integration
-- Verilog parser
-- GDS analysis
-- Interactive design assistant
-- AI-assisted circuit debugging
-- Semiconductor knowledge graph
 
 ---
 
@@ -1183,9 +814,9 @@ The project is designed to run locally and supports CPU execution. GPU accelerat
 # Clone the Repository
 
 ```bash
-git clone https://github.com/<your-username>/NeuroVLSI-GPT.git
+git clone https://github.com/AryaRaj76438/neurovlsi-assistant
 
-cd NeuroVLSI-GPT
+cd neurovlsi
 ```
 
 ---
@@ -1288,69 +919,6 @@ What determines op-amp gain?
 
 Explain Miller compensation.
 ```
-
----
-
-### Digital VLSI
-
-```
-Explain SRAM read operation.
-
-How does setup time affect timing closure?
-
-Difference between latch and flip-flop.
-
-Explain CMOS inverter switching.
-
-How does clock skew affect digital circuits?
-```
-
----
-
-### Semiconductor Physics
-
-```
-Explain MOSFET saturation.
-
-Why does channel length modulation occur?
-
-How is threshold voltage determined?
-
-Explain carrier mobility degradation.
-```
-
----
-
-### Neuromorphic Computing
-
-```
-Explain memristor crossbar arrays.
-
-How does a spiking neuron work?
-
-Difference between ANN and SNN.
-
-Explain analog neuron implementation.
-
-Applications of neuromorphic hardware.
-```
-
----
-
-### Mixed Signal
-
-```
-Explain flash ADC.
-
-How does a SAR ADC work?
-
-Difference between DAC architectures.
-
-Why is PLL used?
-
-Explain sigma-delta modulation.
-```
-
 ---
 
 # Example Response
@@ -1401,21 +969,6 @@ Future evaluation will include:
 
 ---
 
-# Performance Goals
-
-Target metrics for future releases:
-
-| Metric | Target |
-|---------|---------|
-| Retrieval Recall | >95% |
-| Retrieval Precision | >90% |
-| Citation Accuracy | >98% |
-| Hallucination Rate | <3% |
-| Local Response Time | <5 seconds |
-| Incremental Indexing | Supported |
-
----
-
 # Future Work
 
 Planned improvements include:
@@ -1427,49 +980,6 @@ Planned improvements include:
 - Query decomposition
 - Better metadata generation
 - Ontology-aware search
-
----
-
-## Language Model
-
-- Fine-tuned semiconductor LLM
-- Engineering instruction tuning
-- Smaller optimized local models
-- Better technical reasoning
-
----
-
-## Knowledge Base
-
-- Verilog support
-- SPICE netlists
-- RTL documentation
-- Layout files
-- Process Design Kits (PDKs)
-- Datasheet parsing
-
----
-
-## User Interface
-
-- FastAPI backend
-- REST API
-- Web interface
-- Interactive document viewer
-- Streaming responses
-- Chat history
-- Authentication
-
----
-
-## Research
-
-- Circuit-aware reasoning
-- Equation understanding
-- Symbol-aware retrieval
-- AI-assisted circuit design
-- Hardware design recommendations
-- Knowledge graph integration
 
 ---
 
@@ -1547,7 +1057,7 @@ If you use NeuroVLSI-GPT in your research, please cite:
 
 # Author
 
-**Arya Raj**
+**Arya Raj: Rajneesh Kumar**
 
 B.Tech Engineering Physics  
 Indian Institute of Technology Guwahati
@@ -1557,7 +1067,6 @@ Research Interests
 - Analog IC Design
 - Neuromorphic Computing
 - Semiconductor AI
-- Retrieval-Augmented Generation
 - Machine Learning
 - Hardware-Aware AI
 
